@@ -11904,7 +11904,7 @@ a.anchor-link {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
@@ -11919,7 +11919,7 @@ a.anchor-link {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash 
@@ -11927,6 +11927,24 @@ jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --to slides --post s
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Process is terminated.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12072,7 +12090,7 @@ $( document ).ready(code_toggle_err);
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Talk-Structure">Talk Structure<a class="anchor-link" href="#Talk-Structure">&#182;</a></h1><ol>
 <li>Background</li>
-<li>Other work</li>
+<li>Other research</li>
 <li>Findings from annual traffic flow data <ul>
 <li>Correlations</li>
 <li>Basic time series models </li>
@@ -12157,7 +12175,7 @@ The UK won't officially know if it is in recession until around 6-7 months after
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>This aim is to find relationships between traffic and econmic indicators to see if this could work</strong></p>
+<p><strong>This aim is to find relationships between traffic and economic indicators to see if this could work</strong></p>
 
 </div>
 </div>
@@ -12169,25 +12187,7 @@ The UK won't officially know if it is in recession until around 6-7 months after
 <h1 id="Other-work">Other work<a class="anchor-link" href="#Other-work">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Have others looked at this...?</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>...Yes!</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12399,55 +12399,7 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Overall-Trends-in-the-data">Overall Trends in the data<a class="anchor-link" href="#Overall-Trends-in-the-data">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;figures/time_series_multi_metrics_small.html&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[11]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-
-        <iframe
-            width="1200"
-            height="1000"
-            src="figures/time_series_multi_metrics_small.html"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-        
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Correlations">Correlations<a class="anchor-link" href="#Correlations">&#182;</a></h1>
+<h1 id="Correlations-with-annual-measures">Correlations with annual measures<a class="anchor-link" href="#Correlations-with-annual-measures">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
@@ -12455,7 +12407,8 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Coefficents">Coefficents<a class="anchor-link" href="#Coefficents">&#182;</a></h3>
+<p>Pearson's correlations of AADF traffic and economic measures lagged by one year</p>
+
 </div>
 </div>
 </div></div><div class="fragment">
@@ -12463,7 +12416,15 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><table border="1" class="dataframe">  <thead>    <tr>      <th></th>       </tr>    <tr>      <th>Economic indicator</th>      <th>CPI</th>      <th>Change in unemployment (% pts)</th>      <th>Change in weekly earnings (£)</th>      <th>GDP Growth</th>    </tr>    <tr>      <th>Vehicle type</t >      <th></th>      <th></th>      <th></th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th>All HGVs</th>      <td>0.077045</td>      <td>-0.145477</td>      <td>0.946293</td>      <td>0.507384</td>    </tr>    <tr>      <th>All Motor Vehicles</th>      <td>0.088426</td>      <td>-0.494078</td>      <td>0.826505</td>      <td>0.757739</td>    </tr>    <tr>      <th>Buses and Coaches</th>      <td>0.111941</td>      <td>-0.559256</td>      <td>0.718989</td>      <td>0.756430</td>    </tr>    <tr>      <th>Cars and Taxis</th>      <td>0.104417</td>      <td>-0.455441</td>      <td>0.837060</td>      <td>0.765201</td>    </tr>    <tr>      <th>LGVs</th>      <td>-0.048951</td>      <td>-0.670309</td>      <td>0.183337</td>      <td>0.447924</td>    </tr>    <tr>      <th>Motorbikes and Scooters</th>      <td>0.073761</td>      <td>0.116624</td>      <td>0.825611</td>      <td>0.255856</td>    </tr>    <tr>      <th>Pedal Cycles</th>      <td>0.036957</td>      <td>-0.570229</td>      <td>-0.177683</td>      <td>0.366898</td>    </tr>  </tbody></table>'</p>
+<h1 id="Coefficents">Coefficents<a class="anchor-link" href="#Coefficents">&#182;</a></h1>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><table border="1" class="dataframe">  <thead>    <tr>      <th></th>       </tr>    <tr>      <th>Economic indicator</th>      <th>CPI</th>      <th>Change in unemployment (% pts)</th>      <th>Change in weekly earnings (£)</th>      <th>GDP Growth</th>    </tr>    <tr>      <th>Vehicle type</t >      <th></th>      <th></th>      <th></th>      <th></th>    </tr>  </thead>  <tbody>    <tr>      <th>All HGVs</th>      <td>0.08</td>      <td>-0.15</td>      <td>0.95</td>      <td>0.51</td>    </tr>    <tr>      <th>All Motor Vehicles</th>      <td>0.09</td>      <td>-0.50</td>      <td>0.83</td>      <td>0.76</td>    </tr>    <tr>      <th>Buses and Coaches</th>      <td>0.11</td>      <td>-0.56</td>      <td>0.72</td>      <td>0.76</td>    </tr>    <tr>      <th>Cars and Taxis</th>      <td>0.10</td>      <td>-0.46</td>      <td>0.84</td>      <td>0.77</td>    </tr>    <tr>      <th>LGVs</th>      <td>-0.05</td>      <td>-0.67</td>      <td>0.18</td>      <td>0.44</td>    </tr>    <tr>      <th>Motorbikes and Scooters</th>      <td>0.07</td>      <td>0.12</td>      <td>0.83</td>      <td>0.26</td>    </tr>    <tr>      <th>Pedal Cycles</th>      <td>0.04</td>      <td>-0.57</td>      <td>-0.18</td>      <td>0.37</td>    </tr>  </tbody></table>'</p>
 
 </div>
 </div>
@@ -12630,7 +12591,7 @@ European conference on Quality in official statistics June 2018:
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Weekly earnings, GDP and unemployment look like good candidates, like Stats Netherlands</li>
-<li>Thoudh no correlation with inflation</li>
+<li>Though no correlation with inflation</li>
 <li>Evidence that traffic flow can be used as an early indicator for economic measures</li>
 <li>Need more data to allow for more sophisticated methods</li>
 </ul>
@@ -12666,12 +12627,13 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Highways England provides an open dataset containing traffic flow counts at 15 minute intervals for Motorways and Major A-Roads across England.</p>
+<p>Highways England provides an open dataset containing traffic flow counts at 15 minute intervals for Motorways and major A-Roads across England.</p>
 <ul>
 <li><p>The Data Engineering team in DaaS have scraped this and ingested into DAP-E</p>
 <ul>
 <li>Over 2 million seperate files</li>
 <li>Over 200Gb of data</li>
+<li>Seperates out small (&lt; 5.6m), medium (5.6 - 6.6m), large (6.6 - 11.6m) and very large (&gt; 11.6m) vehicles</li>
 </ul>
 </li>
 <li><p>Really exciting high frequency dataset - ideally suited for this work</p>
@@ -12684,27 +12646,12 @@ European conference on Quality in official statistics June 2018:
 
 </div>
 </div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-we-did">What we did<a class="anchor-link" href="#What-we-did">&#182;</a></h3><p>Make the data manageable without pyspark</p>
-<ul>
-<li>Aggregate to give mean daily traffic count for a 15 minute period across the UK</li>
-<li>Applied some straightfoward decomposition to find trend and yearly seasonal component</li>
-<li>For supervised learning, create a feature for each traffic variable for each day in time period</li>
-</ul>
-
-</div>
-</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Decomposition">Decomposition<a class="anchor-link" href="#Decomposition">&#182;</a></h3><p>Basic multiplicative model</p>
-
+<h3 id="What-we-did">What we did<a class="anchor-link" href="#What-we-did">&#182;</a></h3>
 </div>
 </div>
 </div></section><section>
@@ -12712,7 +12659,72 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Trends">Trends<a class="anchor-link" href="#Trends">&#182;</a></h3>
+<p>Make the data manageable</p>
+<ul>
+<li>Aggregate to give mean traffic count for a 15 minute period across the UK for each day</li>
+<li>Applied some straightfoward decomposition to find trend and yearly seasonal component</li>
+<li>For supervised learning, create a feature for each traffic variable for each day in time period</li>
+<li>Compare this to quarterly GDP</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Quarterly-moving-average">Quarterly moving average<a class="anchor-link" href="#Quarterly-moving-average">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;figures/quarterly_smoothed_daily_time_series_multi_metrics_small.html&quot;</span><span class="p">,</span>
+      <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
+       <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="1000"
+            height="600"
+            src="figures/quarterly_smoothed_daily_time_series_multi_metrics_small.html"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Decomposition">Decomposition<a class="anchor-link" href="#Decomposition">&#182;</a></h3>
 </div>
 </div>
 </div><div class="fragment">
@@ -12879,7 +12891,7 @@ European conference on Quality in official statistics June 2018:
 <li><p>3-fold cross validated Grid Search used for parameter optimisation for supervised learning methods</p>
 </li>
 </ul>
-<p>Ridge regression looked to be the "best" model (none of these really worked)</p>
+<p>Ridge regression looked to be the "best" model (none of these worked that well)</p>
 
 </div>
 </div>
@@ -13081,13 +13093,13 @@ European conference on Quality in official statistics June 2018:
 <td style="text-align:right">MSE</td>
 <td style="text-align:center">0.024</td>
 <td style="text-align:left">2010-2014</td>
-<td style="text-align:center">Seasonal components</td>
+<td style="text-align:center">Trend and seasonal components</td>
 </tr>
 <tr>
 <td style="text-align:right">R squared</td>
 <td style="text-align:center">0.796</td>
 <td style="text-align:left">2010-2014</td>
-<td style="text-align:center">Seasonal components</td>
+<td style="text-align:center">Trend and seasonal components</td>
 </tr>
 <tr>
 <td style="text-align:right">MSE</td>
@@ -13140,7 +13152,7 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="This-shows-that-you-have-to-be-very-careful-with-using-this-type-of-data-for-nowcasting/flash-estimates-of-economic-metrics">This shows that you have to be <strong>very</strong> careful with using this type of data for nowcasting/flash estimates of economic metrics<a class="anchor-link" href="#This-shows-that-you-have-to-be-very-careful-with-using-this-type-of-data-for-nowcasting/flash-estimates-of-economic-metrics">&#182;</a></h1>
+<h1 id="Be-very-careful-with-traffic-data-for-nowcasting/flash-estimates-of-economic-metrics">Be <strong>very</strong> careful with traffic data for nowcasting/flash estimates of economic metrics<a class="anchor-link" href="#Be-very-careful-with-traffic-data-for-nowcasting/flash-estimates-of-economic-metrics">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
