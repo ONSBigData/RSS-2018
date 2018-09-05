@@ -16,7 +16,7 @@
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -11904,10 +11904,12 @@ a.anchor-link {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
 </div>
@@ -11919,11 +11921,11 @@ a.anchor-link {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash 
-jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --to slides --post serve
+jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --SlidesExporter.reveal_theme<span class="o">=</span>serif --SlidesExporter.reveal_scroll<span class="o">=</span>True --SlidesExporter.reveal_transition<span class="o">=</span>slide --to slides --post serve
 </pre></div>
 
 </div>
@@ -11949,14 +11951,15 @@ jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --to slides --post s
 </div>
 
 </div>
-</aside><section><section>
+</aside><aside class="notes">
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash 
-jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --to slides
+jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --SlidesExporter.reveal_theme<span class="o">=</span>serif --SlidesExporter.reveal_scroll<span class="o">=</span>True --SlidesExporter.reveal_transition<span class="o">=</span>slide --to slides
 </pre></div>
 
 </div>
@@ -11974,7 +11977,7 @@ jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --to slides
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>[NbConvertApp] Converting notebook /home/eddr/Documents/Projects/RSS-2018/index.ipynb to slides
-[NbConvertApp] Writing 300575 bytes to /home/eddr/Documents/Projects/RSS-2018/index.slides.html
+[NbConvertApp] Writing 311849 bytes to /home/eddr/Documents/Projects/RSS-2018/index.slides.html
 </pre>
 </div>
 </div>
@@ -11982,12 +11985,13 @@ jupyter nbconvert ~/Documents/Projects/RSS-2018/index.ipynb --to slides
 </div>
 </div>
 
-</div></section></section><section><section>
+</div>
+</aside><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Traffic-flow-as-an-early-indicator-for-GDP-growth-(and-other-economic-measures)">Traffic flow as an early indicator for GDP growth (and other economic measures)<a class="anchor-link" href="#Traffic-flow-as-an-early-indicator-for-GDP-growth-(and-other-economic-measures)">&#182;</a></h1><p><strong>Edward Rowland</strong><br>
+<h1 id="Traffic-flow-as-an-early-indicator-for-GDP-growth">Traffic flow as an early indicator for GDP growth<a class="anchor-link" href="#Traffic-flow-as-an-early-indicator-for-GDP-growth">&#182;</a></h1><p><strong>Edward Rowland</strong><br>
 Big Data - Methodology</p>
 <p><strong>Jessica Lawrence, Nathan Davis, Anthony Fitzroy and Ben Vince</strong><br>
 Data Engineering - DaaS</p>
@@ -12126,8 +12130,13 @@ $( document ).ready(code_toggle_err);
 <li>Other research</li>
 <li>High Frequency traffic counts</li>
 <li>Supervised learning models</li>
-<li>Discussion</li>
+<li>Discussion  </li>
+</ol>
+<p><strong>Other things I may not have time to talk about but are in these slides</strong></p>
+<ol>
 <li>Future direction with some more time series analysis</li>
+<li>Correlations and time series models with annual data</li>
+<li>Trends and seasonal decomposition of daily traffic counts</li>
 </ol>
 
 </div>
@@ -12169,8 +12178,8 @@ Background
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>1. More localised estimates</strong></p>
-<p>Identify areas of low or negative growth that would be lost if looking at the national figures</p>
+<p><strong>1. More localised estimates</strong><br>
+Identify areas of low or negative growth that would be lost if looking at the national figures</p>
 
 </div>
 </div>
@@ -12179,8 +12188,8 @@ Background
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>2. Potential early indicator</strong></p>
-<p>A recession is defined as having two or more quarters of negative GDP growth.
+<p><strong>2. Potential early indicator</strong><br>
+A recession is defined as having two or more quarters of negative GDP growth.
 The UK won't officially know if it is in recession until around 6-7 months after it started.</p>
 
 </div>
@@ -12190,17 +12199,8 @@ The UK won't officially know if it is in recession until around 6-7 months after
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>3. Identify impacts of specific events</strong></p>
-<p>With high frequency data, it could identify the impacts of events (Weather, terrorist attacks, Brexit etc.)</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>This aim is to find relationships between traffic and economic indicators to see if this could work</strong></p>
+<p><strong>3. Identify impacts of specific events</strong><br>
+With high frequency data, it could identify the impacts of events (Weather, terrorist attacks, Brexit etc.)</p>
 
 </div>
 </div>
@@ -12209,7 +12209,7 @@ The UK won't officially know if it is in recession until around 6-7 months after
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Other-work">Other work<a class="anchor-link" href="#Other-work">&#182;</a></h1>
+<h1 id="Work-from-other-NSIs">Work from other NSIs<a class="anchor-link" href="#Work-from-other-NSIs">&#182;</a></h1>
 </div>
 </div>
 </div></section></section><section><section>
@@ -12271,7 +12271,6 @@ The UK won't officially know if it is in recession until around 6-7 months after
 <li>Larger vehicles (HGVs) correlate most strongly with GDP</li>
 <li>Perhaps some weaker correlations with inflation and Unemployment</li>
 </ul>
-<p>We can look and see if this matches with the data used here later</p>
 
 </div>
 </div>
@@ -12289,7 +12288,7 @@ The UK won't officially know if it is in recession until around 6-7 months after
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Slovenia">Slovenia<a class="anchor-link" href="#Slovenia">&#182;</a></h3>
+<h3 id="Statistical-Office-of-the-Republic-of-Slovenia-(SURS)">Statistical Office of the Republic of Slovenia (SURS)<a class="anchor-link" href="#Statistical-Office-of-the-Republic-of-Slovenia-(SURS)">&#182;</a></h3>
 </div>
 </div>
 </div><div class="fragment">
@@ -12300,7 +12299,7 @@ The UK won't officially know if it is in recession until around 6-7 months after
 <ul>
 <li>Used traffic flow to estimate GDP figure 45 days before its publication.</li>
 <li>PCA with linear regression to estimate GDP</li>
-<li>Found that Cargo vehicles were the best predictor of GDP, within 1% of the GDP figure</li>
+<li>Found that cargo vehicles were the best predictor of GDP, within 1% of the GDP figure</li>
 </ul>
 
 </div>
@@ -12321,7 +12320,7 @@ European conference on quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Finland">Finland<a class="anchor-link" href="#Finland">&#182;</a></h2>
+<h2 id="Statistics-Finland">Statistics Finland<a class="anchor-link" href="#Statistics-Finland">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
@@ -12372,16 +12371,17 @@ European conference on Quality in official statistics June 2018:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Highways England provides an open dataset containing traffic flow counts at 15 minute intervals for Motorways and major A-Roads across England.</p>
 <ul>
-<li><p>The Data Engineering team in DaaS have scraped this and ingested into DAP-E</p>
+<li><p>The Data Engineering team in DaaS have scraped and ingested this data</p>
 <ul>
-<li>Over 2 million seperate files</li>
+<li>Over 2 million separate files</li>
 <li>Over 200Gb of data</li>
-<li>Seperates out small (&lt; 5.6m), medium (5.6 - 6.6m), large (6.6 - 11.6m) and very large (&gt; 11.6m) vehicles</li>
+<li>Separates out small (&lt; 5.6m), medium (5.6 - 6.6m), large (6.6 - 11.6m) and very large (&gt; 11.6m) vehicles</li>
 </ul>
 </li>
 <li><p>Really exciting high frequency dataset - ideally suited for this work</p>
 <ul>
 <li>Look at the approaches used in Slovenia and Finland</li>
+<li>Previously we have replicated correlations found by Stats Netherlands using annual data</li>
 </ul>
 </li>
 </ul>
@@ -12393,10 +12393,10 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-we-did">What we did<a class="anchor-link" href="#What-we-did">&#182;</a></h3>
+<h3 id="Data-processing">Data processing<a class="anchor-link" href="#Data-processing">&#182;</a></h3>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12404,14 +12404,14 @@ European conference on Quality in official statistics June 2018:
 <p>Make the data manageable</p>
 <ul>
 <li>Aggregate to give mean traffic count for a 15 minute period across the UK for each day</li>
-<li>Applied some straightfoward decomposition to find trend and yearly seasonal component</li>
+<li>Created features by decomposing the data to find trend and yearly seasonal components as well as moving averages</li>
 <li>For supervised learning, create a feature for each traffic variable for each day in time period</li>
 <li>Compare this to quarterly GDP</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12427,24 +12427,22 @@ European conference on Quality in official statistics June 2018:
 <p>A range of different approaches were used including...</p>
 <ul>
 <li>SARIMAX - with a variety of different quarterly weighted average traffic flow measures as exogenous regressors</li>
-<li>PCA for decomposition and linear regression with and without shrinkage methods.</li>
-<li><p>PCA for decomposition and Random Forest Regression</p>
-</li>
-<li><p>3-fold cross validated Grid Search used for parameter optimisation for supervised learning methods</p>
-</li>
+<li>PCA for decomposition and linear regression with and without shrinkage methods</li>
+<li>PCA for decomposition and Random Forest Regression</li>
+<li>3-fold cross validated Grid Search used for parameter optimisation for supervised learning methods</li>
 </ul>
-<p>Ridge regression looked to be the "best" model (none of these worked that well)</p>
+<p>Ridge regression looked to be the "best" model of these</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;figures/full_ts_ridge_model_small.html&quot;</span><span class="p">,</span>
-       <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> 
+       <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
        <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
@@ -12458,14 +12456,14 @@ European conference on Quality in official statistics June 2018:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[83]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
         <iframe
-            width="800"
+            width="1000"
             height="600"
             src="figures/full_ts_ridge_model_small.html"
             frameborder="0"
@@ -12479,31 +12477,6 @@ European conference on Quality in official statistics June 2018:
 </div>
 </div>
 
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-metrics">Model metrics<a class="anchor-link" href="#Model-metrics">&#182;</a></h3><table>
-<thead><tr>
-<th>Metric</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MSE</td>
-<td style="text-align:center">0.353</td>
-</tr>
-<tr>
-<td>R squared</td>
-<td style="text-align:center">0.354</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12571,14 +12544,14 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>... only one of these includes a global financial crisis. Lets see what happens when we try this with data from 2010-2014.</p>
+<p>... only one of these includes a global financial crisis. Let us see what happens when we try this with data from 2010-2014.</p>
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;figures/no_rec_ridge_model_small.html&quot;</span><span class="p">,</span>
@@ -12596,7 +12569,7 @@ European conference on Quality in official statistics June 2018:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[94]:</div>
 
 
 
@@ -12622,11 +12595,64 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<table>
+<h3 id="Model-1">Model 1<a class="anchor-link" href="#Model-1">&#182;</a></h3><table>
 <thead><tr>
 <th style="text-align:right">Metric</th>
 <th style="text-align:center">Value</th>
 <th style="text-align:left">Fitted to</th>
+<th style="text-align:center">Tested on</th>
+<th style="text-align:center">Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">MSE</td>
+<td style="text-align:center">0.353</td>
+<td style="text-align:left">2006-2014</td>
+<td style="text-align:center">2006-2014</td>
+<td style="text-align:center">7 day moving average</td>
+</tr>
+<tr>
+<td style="text-align:right">R squared</td>
+<td style="text-align:center">0.354</td>
+<td style="text-align:left">2006-2014</td>
+<td style="text-align:center">2006-2014</td>
+<td style="text-align:center">7 day moving average</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Model-2">Model 2<a class="anchor-link" href="#Model-2">&#182;</a></h3><table>
+<thead><tr>
+<th style="text-align:right">Metric</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:left">Fitted to</th>
+<th style="text-align:center">Tested on</th>
+<th style="text-align:center">Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">MSE</td>
+<td style="text-align:center">0.137</td>
+<td style="text-align:left">2006-2014</td>
+<td style="text-align:center">2010-2014</td>
+<td style="text-align:center">7 day moving average</td>
+</tr>
+<tr>
+<td style="text-align:right">R squared</td>
+<td style="text-align:center">-0.126</td>
+<td style="text-align:left">2006-2014</td>
+<td style="text-align:center">2010-2014</td>
+<td style="text-align:center">7 day moving average</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Model-3">Model 3<a class="anchor-link" href="#Model-3">&#182;</a></h3><table>
+<thead><tr>
+<th style="text-align:right">Metric</th>
+<th style="text-align:center">Value</th>
+<th style="text-align:left">Fitted to</th>
+<th style="text-align:center">Tested on</th>
 <th style="text-align:center">Features</th>
 </tr>
 </thead>
@@ -12635,25 +12661,15 @@ European conference on Quality in official statistics June 2018:
 <td style="text-align:right">MSE</td>
 <td style="text-align:center">0.024</td>
 <td style="text-align:left">2010-2014</td>
+<td style="text-align:center">2010-2014</td>
 <td style="text-align:center">Trend and seasonal components</td>
 </tr>
 <tr>
 <td style="text-align:right">R squared</td>
 <td style="text-align:center">0.796</td>
 <td style="text-align:left">2010-2014</td>
+<td style="text-align:center">2010-2014</td>
 <td style="text-align:center">Trend and seasonal components</td>
-</tr>
-<tr>
-<td style="text-align:right">MSE</td>
-<td style="text-align:center">0.137</td>
-<td style="text-align:left">2006-2014</td>
-<td style="text-align:center">7 day moving average</td>
-</tr>
-<tr>
-<td style="text-align:right">R squared</td>
-<td style="text-align:center">-0.126</td>
-<td style="text-align:left">2006-2014</td>
-<td style="text-align:center">7 day moving average</td>
 </tr>
 </tbody>
 </table>
@@ -12682,9 +12698,9 @@ European conference on Quality in official statistics June 2018:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>We can produce reasonable estimates of GDP with traffic flow data, <strong>when there is no recession</strong></li>
+<li>It is quite "easy" to produce reasonable estimates of GDP with traffic flow data, <strong>when there is no recession</strong></li>
 <li>This replicates results found by other NSIs</li>
-<li>That is not to say these are wrong, we need to be very cautious when making predictions about the real world</li>
+<li>Making predictions about the real world events that drastically deviates from the norm is "hard"</li>
 </ul>
 
 </div>
@@ -12694,7 +12710,7 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Be-very-careful-with-traffic-data-for-nowcasting/flash-estimates-of-economic-metrics">Be <strong>very</strong> careful with traffic data for nowcasting/flash estimates of economic metrics<a class="anchor-link" href="#Be-very-careful-with-traffic-data-for-nowcasting/flash-estimates-of-economic-metrics">&#182;</a></h1>
+<h1 id="Take-home:-be-very-careful">Take home: be <strong>very</strong> careful<a class="anchor-link" href="#Take-home:-be-very-careful">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
@@ -12702,7 +12718,7 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If these types of estimates are used by policy makers, businesses etc. then it is possible they will not be able predict drastic changes, like a recession.</p>
+<p>If nowcasts/flash estimates from these data sources are used by then it is possible they will not be able anticipate drastic changes, like a recession.</p>
 
 </div>
 </div>
@@ -12711,7 +12727,16 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This means your model may fail, just when it is needed the most.</p>
+<p>This means your model may fail, just when policymakers and buisinesses need them the most.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In turn, this could introduce complacency - worse than if your estimations didn't exist</p>
 
 </div>
 </div>
@@ -12728,8 +12753,14 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Try some other economic indicators?</p>
+<ul>
+<li>Average salary</li>
+<li>Unemployment</li>
+<li>Imports and exports</li>
+</ul>
 <p>Well the data we have means we may be able to solve this problem.</p>
-<p>We have only scratched the surface, there may be a recession "singiture" in the data. With careful decomposition and analysis we may be able to find it, such as...</p>
+<p>We have only scratched the surface, there may be a recession "singature" in the data. With careful decomposition and analysis we may be able to find it, such as...</p>
 
 </div>
 </div>
@@ -12738,7 +12769,370 @@ European conference on Quality in official statistics June 2018:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Thank-you-for-listening">Thank you for listening<a class="anchor-link" href="#Thank-you-for-listening">&#182;</a></h1><p>See these slides.</p>
+<h1 id="Time-series-features">Time series features<a class="anchor-link" href="#Time-series-features">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Daily">Daily<a class="anchor-link" href="#Daily">&#182;</a></h1><p><img src="images/days of the week 2.png" alt="alt text"></p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Weekly">Weekly<a class="anchor-link" href="#Weekly">&#182;</a></h1><p>Spectral analysis from fitting an AR(35) model to the data</p>
+<p><img src="images/spectral analysis.png" alt="alt text"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Monthly">Monthly<a class="anchor-link" href="#Monthly">&#182;</a></h1><p><img src="images/monthly 2.png" alt="alt text"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Residuals-around-easter">Residuals around easter<a class="anchor-link" href="#Residuals-around-easter">&#182;</a></h1>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">easter_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">/ts_results/easter_coeff.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</aside></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">easter_df</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[109]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>-2</th>
+      <th>-1</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th>Easter</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>16/04/06</th>
+      <td>-4.97</td>
+      <td>1.97</td>
+      <td>0.58</td>
+      <td>-1.83</td>
+      <td>2.18</td>
+    </tr>
+    <tr>
+      <th>08/04/07</th>
+      <td>-4.82</td>
+      <td>2.16</td>
+      <td>0.63</td>
+      <td>-1.70</td>
+      <td>2.74</td>
+    </tr>
+    <tr>
+      <th>23/03/08</th>
+      <td>-5.51</td>
+      <td>1.33</td>
+      <td>-0.44</td>
+      <td>-1.27</td>
+      <td>2.99</td>
+    </tr>
+    <tr>
+      <th>12/04/09</th>
+      <td>-5.37</td>
+      <td>1.96</td>
+      <td>0.18</td>
+      <td>-1.46</td>
+      <td>2.44</td>
+    </tr>
+    <tr>
+      <th>04/04/10</th>
+      <td>-4.99</td>
+      <td>1.96</td>
+      <td>0.34</td>
+      <td>-2.16</td>
+      <td>2.55</td>
+    </tr>
+    <tr>
+      <th>24/04/11</th>
+      <td>-5.38</td>
+      <td>0.63</td>
+      <td>1.43</td>
+      <td>-0.54</td>
+      <td>1.73</td>
+    </tr>
+    <tr>
+      <th>08/04/12</th>
+      <td>-4.99</td>
+      <td>2.05</td>
+      <td>0.11</td>
+      <td>-2.39</td>
+      <td>2.84</td>
+    </tr>
+    <tr>
+      <th>31/03/13</th>
+      <td>-4.73</td>
+      <td>2.03</td>
+      <td>-0.39</td>
+      <td>-2.59</td>
+      <td>2.21</td>
+    </tr>
+    <tr>
+      <th>20/04/14</th>
+      <td>-4.56</td>
+      <td>1.90</td>
+      <td>0.08</td>
+      <td>-1.37</td>
+      <td>2.63</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Significant-days">Significant days<a class="anchor-link" href="#Significant-days">&#182;</a></h1><p>Including the effects of rain and temperature</p>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">days_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">/ts_results/sig_days.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+</aside></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">days_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Coefficient&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[112]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Coefficient</th>
+      <th>Standard Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Additional Holiday for Wedding of Kate and William</th>
+      <td>-136.10</td>
+      <td>10.07</td>
+    </tr>
+    <tr>
+      <th>Christmas Day</th>
+      <td>-113.26</td>
+      <td>5.03</td>
+    </tr>
+    <tr>
+      <th>New Year Bank Holiday</th>
+      <td>-108.68</td>
+      <td>3.67</td>
+    </tr>
+    <tr>
+      <th>Good Friday</th>
+      <td>-103.16</td>
+      <td>3.36</td>
+    </tr>
+    <tr>
+      <th>Late May Bank Holiday</th>
+      <td>-91.11</td>
+      <td>3.36</td>
+    </tr>
+    <tr>
+      <th>Additional Holiday for Queens Diamond Jubilee</th>
+      <td>-89.29</td>
+      <td>10.07</td>
+    </tr>
+    <tr>
+      <th>Christmas Bank Holiday</th>
+      <td>-84.30</td>
+      <td>5.05</td>
+    </tr>
+    <tr>
+      <th>Early May Bank Holiday</th>
+      <td>-80.01</td>
+      <td>3.36</td>
+    </tr>
+    <tr>
+      <th>August Bank Holiday (England and Wales)</th>
+      <td>-77.27</td>
+      <td>3.35</td>
+    </tr>
+    <tr>
+      <th>Boxing Day Bank Holiday</th>
+      <td>-70.55</td>
+      <td>3.50</td>
+    </tr>
+    <tr>
+      <th>Easter Monday</th>
+      <td>-67.69</td>
+      <td>3.36</td>
+    </tr>
+    <tr>
+      <th>Christmas Eve</th>
+      <td>-35.32</td>
+      <td>3.50</td>
+    </tr>
+    <tr>
+      <th>Deviation from mean daily rain fall</th>
+      <td>-0.40</td>
+      <td>0.06</td>
+    </tr>
+    <tr>
+      <th>Deviation from mean daily temperature</th>
+      <td>0.45</td>
+      <td>0.13</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Residuals">Residuals<a class="anchor-link" href="#Residuals">&#182;</a></h1><p>Even with all of the above, there is still a lot of unexplained structure in the time series
+<img src="images/resid 2.png" alt="alt text"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Thank-you-for-listening">Thank you for listening<a class="anchor-link" href="#Thank-you-for-listening">&#182;</a></h1><p>See these slides again!</p>
+<p>Gitpages : <a href="https://onsbigdata.github.io/RSS-2018/">https://onsbigdata.github.io/RSS-2018/</a><br>
+Github repo:  <a href="https://github.com/ONSBigData/RSS-2018/">https://github.com/ONSBigData/RSS-2018/</a></p>
+<p>Email: edward.rowland@ons.gov.uk</p>
 
 </div>
 </div>
@@ -13254,7 +13648,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = false
+            var scroll = true
             if (scroll === true) {
               var h = $('.reveal').height() * 0.95;
               $('section.present').find('section')
