@@ -8,7 +8,7 @@ GDP growth is a key metric in considering the economic status of the UK. The ONS
 The slides are available here; https://onsbigdata.github.io/RSS-2018/#/
 
 ### Comments
-The presentation mostly concentrates on models predicting GDP from daily traffic flow data. It finds that while it is possible to replicate the approach carried out by other National Statisitics Institutes (references in presentation), this approach does not work with a longer time series that includes the 2007/8 finacial crisis and subsequent recession in the UK. 
+The presentation mostly concentrates on models predicting GDP from daily traffic flow data. It finds that while it is possible to replicate the approach carried out by other National Statistics Institutes (references in presentation), this approach does not work with a longer time series that includes the 2007/8 financial crisis and subsequent recession in the UK.
 
 ### Contact
 Please email edward.rowland@ons.gov.uk if you have any questions or comments.
